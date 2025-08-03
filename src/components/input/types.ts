@@ -2,7 +2,8 @@ export type InputProps = {
     inputId: string;
     name: string;
     type: HTMLInputElement["type"];
-    placeholder: string;
+    value?: string;
+    placeholder?: string;
     error?: string | boolean;
     variant?: string;
     radius?: string;
