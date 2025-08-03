@@ -1,13 +1,16 @@
-export type InputProps = {
-    inputId: string;
+import type { JSX } from "react";
+
+export type TextInputProps = {
     name: string;
     type: HTMLInputElement["type"];
     placeholder: string;
+    label: string;
+    description: string;
     error?: string | boolean;
     variant?: string;
     radius?: string;
     size?: string;
     disabled?: boolean;
-    descriptionId?: string;
-    withIcon?: boolean;
+    withAsterisk?: boolean;
+    icon?: string | JSX.Element;
 }

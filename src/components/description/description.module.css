@@ -1,0 +1,23 @@
+.description {
+    margin: 0;
+}
+
+.description[data-size="xs"] {
+    font-size: 0.6rem;
+}
+
+.description[data-size="sm"] {
+    font-size: 0.725rem;
+}
+
+.description[data-size="md"] {
+    font-size: 0.85rem;
+}
+
+.description[data-size="lg"] {
+    font-size: 0.975rem;
+}
+
+.description[data-size="xl"] {
+    font-size: 1.1rem;
+}

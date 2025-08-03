@@ -1,4 +1,4 @@
-import { Input } from "../input/input"
+import { TextInput } from "../text-input/text-input"
 import type { SigninProps } from "./types";
 import { useForm } from "../../hooks";
 
@@ -14,14 +14,14 @@ export const Signin = ({ onSubmit }: SigninProps) => {
         <>
             <h2>Signin</h2>
             <form onSubmit={handleSubmit} onChange={handleChange}>
-                <Input 
+                <TextInput 
                     name="email"
                     type='email'
                     placeholder={'example@example.com'}
                     label={'Email'}
                     description={'Enter your email'}
                 />
-                <Input 
+                <TextInput 
                     name="password"
                     type='password'
                     placeholder={'Authentication password'}

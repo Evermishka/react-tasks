@@ -1,111 +1,3 @@
-.wrapper {
-    display: flex;
-    flex-direction: column;
-    max-width: 21.25rem;
-    line-height: 1.55;
-}
-
-/* Label */
-
-.label[data-size="xs"] {
-    font-size: 0.75rem;
-}
-
-.label[data-size="sm"] {
-    font-size: 0.875rem;
-}
-
-.label[data-size="md"] {
-    font-size: 1rem;
-}
-
-.label[data-size="lg"] {
-    font-size: 1.125rem;
-}
-
-.label[data-size="xl"] {
-    font-size: 1.25rem;
-}
-
-.label[data-required="true"]::after {
-    content: "*";    
-    margin-left: 0.25rem;
-    color: red;
-}
-
-/* Description */
-
-.description {
-    margin: 0;
-}
-
-.description[data-size="xs"] {
-    font-size: 0.6rem;
-}
-
-.description[data-size="sm"] {
-    font-size: 0.725rem;
-}
-
-.description[data-size="md"] {
-    font-size: 0.85rem;
-}
-
-.description[data-size="lg"] {
-    font-size: 0.975rem;
-}
-
-.description[data-size="xl"] {
-    font-size: 1.1rem;
-}
-
-/* Input Container */
-
-.inputContainer {
-    position: relative;
-    margin-top: 0.1rem;
-    margin-bottom: 0.1rem;
-}
-
-.inputContainer[data-size="xs"] {
-    height: 1.875rem;
-    font-size: 0.6rem;
-}
-
-.inputContainer[data-size="sm"] {
-    height: 2.25rem;
-    font-size: 0.725rem;
-}
-
-.inputContainer[data-size="md"] {
-    height: 2.625rem;
-    font-size: 0.85rem;
-}
-
-.inputContainer[data-size="lg"] {
-    height: 3.15rem;
-     font-size: 0.975rem;
-}
-
-.inputContainer[data-size="xl"] {
-    height: 3.75rem;
-    font-size: 1.1rem;
-}
-
-/* Icon */
-
-.icon {
-    position: absolute;
-    bottom: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    left: 0.675rem;
-    display: flex;
-    align-items: center;
-}
-
-/* Input */
-
 .input {
     padding-inline-start: 0.675rem;
     padding-inline-end: 0.675rem;
@@ -185,49 +77,23 @@
     font-size: 1.1rem;
 }
 
-.icon + .input[data-size="xs"] {
+.input[data-icon="true"][data-size="xs"] {
     padding-inline-start: 1.475rem;
 }
 
-.icon + .input[data-size="sm"] {
+.input[data-icon="true"][data-size="sm"] {
     padding-inline-start: 1.675rem;
 }
 
-.icon + .input[data-size="md"] {
+.input[data-icon="true"][data-size="md"] {
     padding-inline-start: 1.975rem;
 }
 
-.icon + .input[data-size="lg"] {
+.input[data-icon="true"][data-size="lg"] {
     padding-inline-start: 2.075rem;
 }
 
-.icon + .input[data-size="xl"] {
+.input[data-icon="true"][data-size="xl"] {
     padding-inline-start: 2.275rem;
 }
 
-/* Error */
-
-.error {
-    margin: 0;
-    color: red;
-}
-
-.wrapper[data-size="xs"] .error {
-    font-size: 0.6rem;
-}
-
-.wrapper[data-size="sm"] .error {
-    font-size: 0.725rem;
-}
-
-.wrapper[data-size="md"] .error {
-    font-size: 0.85rem;
-}
-
-.wrapper[data-size="lg"] .error {
-    font-size: 0.975rem;
-}
-
-.wrapper[data-size="xl"] .error {
-    font-size: 1.1
-}
