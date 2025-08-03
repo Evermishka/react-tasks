@@ -1,0 +1,35 @@
+.wrapper {
+    max-width: 21.25rem;
+    line-height: 1.55;
+}
+
+.legend[data-size="xs"] {
+    font-size: 0.75rem;
+}
+
+.legend[data-size="sm"] {
+    font-size: 0.875rem;
+}
+
+.legend[data-size="md"] {
+    font-size: 1rem;
+}
+
+.legend[data-size="lg"] {
+    font-size: 1.125rem;
+}
+
+.legend[data-size="xl"] {
+    font-size: 1.25rem;
+}
+
+.legend[data-required="true"]::after {
+    content: "*";    
+    margin-left: 0.25rem;
+    color: red;
+}
+
+.inputsWrapper {
+    display: flex;
+    gap: 0.5rem;
+}

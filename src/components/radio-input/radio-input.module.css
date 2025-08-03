@@ -1,0 +1,8 @@
+/* Input Container */
+
+.inputContainer {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    min-height: 2rem;
+}
