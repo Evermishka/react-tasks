@@ -14,14 +14,13 @@ type UseLocalStorage = (key: string) => [
 type GetStorageValue = (key: string) => LocalStorageReturnValue;
 
 const getStorageValue: GetStorageValue = (key) => {
-    const savedValue = localStorage.getItem(key);
-
-    if (savedValue) {
-        const value = savedValue;
-        return value;
+    try {
+        const savedValue = localStorage.getItem(key);
+        return savedValue || null;
+    } catch (error) {
+        console.error(`Не удалось получить данные по ключу ${key} из localStorage:`, error);
+        return null;
     }
-
-    return null;
 }
 
 export const useLocalStorage: UseLocalStorage = (key) => {
@@ -29,14 +28,22 @@ export const useLocalStorage: UseLocalStorage = (key) => {
         return getStorageValue(key);
     });
 
-    const setItem = (value: string) => {
-        setValue(value);
-        localStorage.setItem(key, value);
+    const setItem = (newValue: string) => {
+        try {
+            localStorage.setItem(key, newValue);
+            setValue(newValue);
+        } catch (error) {
+            console.error(`Не удалось сохранить данные по ключу ${key} в localStorage:`, error);
+        }
     }
 
     const removeItem = () => {        
-        setValue('');
-        localStorage.removeItem(key);
+       try {
+            localStorage.removeItem(key);
+            setValue('');
+        } catch (error) {
+            console.error(`Не удалось удалить данные данные по ключу ${key} из localStorage:`, error);
+        }
     }
 
     return [value, { setItem, removeItem }]
