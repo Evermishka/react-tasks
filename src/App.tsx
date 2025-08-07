@@ -1,8 +1,13 @@
-function App() {
+import { useViewportSize } from "./hooks/use-vieport-size";
 
-  return (
-      <p>React tasks</p>
-  )
+function App() {
+    const { size } = useViewportSize();
+
+    return (
+        <>
+          Width: {size.width}, height: {size.height}
+        </>
+    );
 }
 
 export default App
