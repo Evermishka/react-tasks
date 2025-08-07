@@ -11,20 +11,17 @@ type UseLocalStorage = (key: string) => [
   },
 ];
 
-type GetStorageValue = (key: string) => string;
-
-const INITIAL_STATE = '';
+type GetStorageValue = (key: string) => LocalStorageReturnValue;
 
 const getStorageValue: GetStorageValue = (key) => {
     const savedValue = localStorage.getItem(key);
 
     if (savedValue) {
-        const value = JSON.parse(savedValue);
+        const value = savedValue;
         return value;
     }
-    
-    localStorage.setItem(key, JSON.stringify(INITIAL_STATE))
-    return INITIAL_STATE;
+
+    return null;
 }
 
 export const useLocalStorage: UseLocalStorage = (key) => {
@@ -34,11 +31,11 @@ export const useLocalStorage: UseLocalStorage = (key) => {
 
     const setItem = (value: string) => {
         setValue(value);
-        localStorage.setItem(key, JSON.stringify(value));
+        localStorage.setItem(key, value);
     }
 
     const removeItem = () => {        
-        setValue(INITIAL_STATE);
+        setValue('');
         localStorage.removeItem(key);
     }
 
