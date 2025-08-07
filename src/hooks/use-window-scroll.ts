@@ -2,8 +2,8 @@ import { useCallback, useEffect, useState } from "react";
 import { useWindowEvent } from "./use-window-event";
 
 type WindowScroll = {
-    x: number;
-    y: number;
+    x?: number;
+    y?: number;
 };
 
 type ScrollTo = (windowScroll: WindowScroll) => void;
@@ -16,7 +16,7 @@ export const useWindowScroll = () => {
     }, []);
 
     const scrollTo = useCallback<ScrollTo>(({ 
-        x = scroll.x, y = scroll.y 
+        x = scroll.x!, y = scroll.y! 
     }) => {
         window.scrollTo(x, y);
     }, [scroll.x, scroll.y]);
