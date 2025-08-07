@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 type LocalStorageSetValue = string;
 type LocalStorageReturnValue = LocalStorageSetValue | null;
@@ -45,6 +45,20 @@ export const useLocalStorage: UseLocalStorage = (key) => {
             console.error(`Не удалось удалить данные данные по ключу ${key} из localStorage:`, error);
         }
     }
+
+    useEffect(() => {
+        const handleStorageChange = (event: StorageEvent) => {
+            if (event.key === key) {
+                setValue(event.newValue || null);
+            }
+        };
+
+        window.addEventListener('storage', handleStorageChange);
+
+        return () => {
+            window.removeEventListener('storage', handleStorageChange);
+        };
+    }, [key]);
 
     return [value, { setItem, removeItem }]
 }
