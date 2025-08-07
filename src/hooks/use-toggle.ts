@@ -15,7 +15,7 @@ const reducer = (state: string | boolean, action: Action) => {
     }
 };
 
-export const useToggle = (values: Array<string | never> = []) => {
+export const useToggle = (values: string[] = []) => {
     const [value, dispatch] = useReducer(reducer, values.length > 0 ? values[0] : false);
 
     const toggle = (newValue = '') => {
