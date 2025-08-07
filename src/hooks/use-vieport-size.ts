@@ -1,14 +1,23 @@
 import { useState } from "react";
 import { useWindowEvent } from "./use-window-event";
 
+type ViewportSize = {
+    height: number;
+    width: number;
+}
+
 export const useViewportSize = () => {
-    const [height, setHeight] = useState(window.innerHeight);
-    const [width, setWidth] = useState(window.innerWidth);
+    const [size, setSize] = useState<ViewportSize>({
+        height: window.innerHeight,
+        width: window.innerWidth
+    })
 
     useWindowEvent("resize", () => {
-        setHeight(window.innerHeight);
-        setWidth(window.innerWidth);
+        setSize({
+            height: window.innerHeight,
+            width: window.innerWidth
+        })
     });
 
-    return { height, width }
+    return { size }
 }

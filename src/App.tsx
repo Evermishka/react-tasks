@@ -1,11 +1,11 @@
 import { useViewportSize } from "./hooks/use-vieport-size";
 
 function App() {
-    const { height, width } = useViewportSize();
+    const { size } = useViewportSize();
 
     return (
         <>
-          Width: {width}, height: {height}
+          Width: {size.width}, height: {size.height}
         </>
     );
 }
